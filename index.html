@@ -262,38 +262,75 @@
     </div>
   </div>
 
-<script>
-  // Burger Menu Toggle
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('nav-links');
-  
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-  });
-
-  // Close menu when a link is clicked (for mobile)
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('nav-active');
-      burger.classList.remove('toggle');
+  <script>
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+    
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
     });
+  
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+      });
+    });
+  
+    const linkElement = document.createElement('link');
+    linkElement.rel = 'stylesheet';
+    linkElement.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css';
+    document.head.appendChild(linkElement);
+  
+   // Updated hero slider initialization without fade effect
+function initHeroSlider(heroId, images) {
+  const hero = document.getElementById(heroId);
+  if (!hero || !images.length) return;
+
+  let currentIndex = 0;
+  const slideDuration = 3000; // Change this value to adjust timing (3000 = 3 seconds)
+
+  function setBackground() {
+    hero.style.backgroundImage = images[currentIndex];
+    const viewportRatio = window.innerWidth / window.innerHeight;
+    hero.style.backgroundSize = viewportRatio > 1 ? 'contain' : 'cover';
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    setBackground(); // Changes image immediately without fade
+  }
+
+  // Initialize first slide
+  setBackground();
+  
+  // Start slideshow
+  const slideInterval = setInterval(nextSlide, slideDuration);
+  
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setBackground, 200);
   });
 
-  // Add the Font Awesome stylesheet dynamically
-  const linkElement = document.createElement('link');
-  linkElement.rel = 'stylesheet';
-  linkElement.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css';
-  document.head.appendChild(linkElement);
+  // Cleanup function
+  return () => {
+    clearInterval(slideInterval);
+    window.removeEventListener('resize', setBackground);
+  };
+}
 
-  // Image Sliders for Hero Sections
+// Initialize both sliders when page loads
+document.addEventListener('DOMContentLoaded', () => {
   const hero1Images = [
     "url('jpg/cap5.jpeg')",
     "url('jpg/cap9.jpeg')",
     "url('jpg/cap3.jpeg')",
     "url('jpg/cap10.jpeg')"
   ];
-
+  
   const hero2Images = [
     "url('jpg/throbe3.jpeg')",
     "url('jpg/shoe.jpg')",
@@ -301,105 +338,62 @@
     "url('jpg/trucker.jpg')",
     "url('jpg/cap7.jpeg')"
   ];
-
-  // Initialize hero sliders
-  function initHeroSlider(heroId, images) {
-    const hero = document.getElementById(heroId);
-    if (!hero) return;
-    
-    let currentIndex = 0;
-    
-    // Set initial background
-    hero.style.backgroundImage = images[currentIndex];
-    
-    // Change image every 3 seconds
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      hero.style.backgroundImage = images[currentIndex];
-    }, 2000);
-  }
-
-  // Initialize both hero sliders
+  
   initHeroSlider('hero1', hero1Images);
   initHeroSlider('hero2', hero2Images);
-
-  // Rest of your existing JavaScript...
-  // Phone number click event handler
-  const phoneNumberLink = document.getElementById('phoneNumber');
-  if (phoneNumberLink) {
-    phoneNumberLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      const phoneNumber = phoneNumberLink.textContent.trim();
-      initiatePhoneCall(phoneNumber);
-    });
-  }
-
-  // Function to initiate phone call
-  function initiatePhoneCall(phoneNumber) {
-    console.log("Initiating phone call to " + phoneNumber);
-    window.location.href = "tel:" + phoneNumber;
-  }
-
-  // Get the modal element
-  const modal = document.getElementById('emailModal');
-
-  // Get the link that triggers the modal
-  const emailUsLink = document.getElementById('emailUsLink');
-
-  // Get the <span> element that closes the modal
-  const closeBtn = document.getElementsByClassName('close')[0];
-
-  // Open the modal when "Email Us" link is clicked
-  if (emailUsLink) {
-    emailUsLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      modal.style.display = 'block';
-    });
-  }
-
-  // Close the modal when the user clicks on <span> (x)
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-    });
-  }
-
-  // Close the modal when the user clicks anywhere outside of it
-  window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-      modal.style.display = 'none';
+});
+  
+    const phoneNumberLink = document.getElementById('phoneNumber');
+    if (phoneNumberLink) {
+      phoneNumberLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        const phoneNumber = phoneNumberLink.textContent.trim();
+        window.location.href = "tel:" + phoneNumber;
+      });
     }
-  });
-
-  // Handle form submission
-  const emailForm = document.getElementById('emailForm');
-  if (emailForm) {
-    emailForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      // You can use the email and message values to send an email or perform any desired action
-      
-      // Clear the form fields
-      document.getElementById('email').value = '';
-      document.getElementById('message').value = '';
-      
-      // Close the modal after form submission
-      modal.style.display = 'none';
+  
+    const modal = document.getElementById('emailModal');
+    const emailUsLink = document.getElementById('emailUsLink');
+    const closeBtn = document.getElementsByClassName('close')[0];
+  
+    if (emailUsLink) {
+      emailUsLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.style.display = 'block';
+      });
+    }
+  
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+    }
+  
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
     });
-  }
-
-  const addressLinkElement = document.getElementById('addressLink');
-  if (addressLinkElement) {
-    const address = addressLinkElement.innerHTML.trim();
-
-    addressLinkElement.addEventListener('click', function(event) {
+  
+    const emailForm = document.getElementById('emailForm');
+    if (emailForm) {
+      emailForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+        modal.style.display = 'none';
+      });
+    }
+  
+    const addressLinkElement = document.getElementById('addressLink');
+    if (addressLinkElement) {
+      const address = addressLinkElement.innerHTML.trim();
+      addressLinkElement.addEventListener('click', function(event) {
         event.preventDefault();
         window.open('https://www.google.com/maps?q=' + encodeURIComponent(address), '_blank');
-    });
-  }
-</script>
+      });
+    }
+  </script>
 
 <style>
   :root {
@@ -423,10 +417,7 @@
     line-height: 1.6;
     background-color: #f9f9f9;
   }
-  
 
- 
-  /* Header Styles */
   header {
     background-color: var(--primary);
     padding: 1rem 2rem;
@@ -452,6 +443,25 @@
   
   .logo img:hover {
     transform: scale(1.05);
+  }
+
+  #brandname {
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin: 0 15px;
+    font-size: clamp(1.25rem, 4vw, 1.8rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  @media (max-width: 400px) {
+    #brandname {
+      font-size: 1.1rem;
+      max-width: 150px;
+    }
   }
   
   .nav-links {
@@ -494,42 +504,6 @@
     width: 100%;
   }
   
-
-
-
-
-  /* Brand name responsiveness */
-#brandname {
-    color: white;
-    text-align: center;
-    /* font-family: 'Pacifico', cursive; */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin: 0 15px; /* Maintain spacing */
-    
-    /* Fluid font sizing */
-    font-size: clamp(1.25rem, 4vw, 1.8rem);
-    
-    /* Prevent text wrapping */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px; /* Adjust based on your logo size */
-}
-
-/* Fine-tune for very small screens */
-@media (max-width: 400px) {
-    #brandname {
-        font-size: 1.1rem;
-        max-width: 150px;
-    }
-}
-
-
-
-
-
-
-  /* Burger Menu Styles */
   .burger {
     display: none;
     cursor: pointer;
@@ -546,7 +520,6 @@
     transition: all 0.3s ease;
   }
   
-  /* Burger Animation */
   .toggle .burger-line:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
@@ -559,56 +532,59 @@
     transform: rotate(45deg) translate(-5px, -6px);
   }
   
-  /* Hero Sections with Sliders */
-.hero, .hero2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Optional: creates a parallax effect */
-  transition: background-image 1s ease-in-out;
-}
+  .hero, .hero2 {
+    position: relative;
+    height: 70vh;
+    min-height: 300px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    transition: background-image 1s ease-in-out;
+    overflow: hidden;
+  }
 
-/* Add this to ensure content stays centered */
-.hero-content {
-  max-width: 800px;
-  padding: 2rem;
-  animation: fadeIn 1.5s ease-in-out;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: better text readability */
-  border-radius: 10px;
-}
-
-
-  
   .hero-content {
+    position: relative;
+    z-index: 3;
     max-width: 800px;
     padding: 2rem;
-    animation: fadeIn 1.5s ease-in-out;
-    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 0 1rem;
   }
-  
+
+  @media (min-width: 768px) {
+    .hero, .hero2 {
+      background-size: cover;
+      min-height: 500px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .hero, .hero2 {
+      min-height: 600px;
+    }
+  }
+
   .hero h1, .hero2 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
-    font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  
+
   .hero p, .hero2 p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
-  
-  /* Button Styles */
+
   button {
     background-color: var(--accent);
     color: white;
@@ -630,7 +606,6 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
   
-  /* Product Sections */
   .products {
     padding: 4rem 2rem;
     background-color: white;
@@ -714,7 +689,6 @@
     max-width: 1200px;
   }
   
-  /* Footer Styles */
   .footer {
     background-color: #555;
     color: #fff;
@@ -842,7 +816,6 @@
     font-size: 0.8rem;
   }
   
-  /* Modal Styles */
   .modal {
     display: none;
     position: fixed;
@@ -893,15 +866,12 @@
     margin-top: 1rem;
   }
   
-  /* Animations */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
-    /* Burger Menu Styles for Mobile */
     .burger {
       display: block;
     }
@@ -939,10 +909,6 @@
     
     .product-container {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    
-    .footer__nav {
-      flex-direction: column;
     }
   }
   
