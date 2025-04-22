@@ -826,6 +826,8 @@ footer {
     flex-direction: column;
 }
 
+        .cart-items {
+            display: none;
 /* Close Cart Button */
 .cart-header {
     display: flex;
@@ -2016,7 +2018,7 @@ footer {
 </div>
 
     <script>
-      // Declare cartIcon and cartItems once at the top of your script
+     // Declare cartIcon and cartItems once at the top of your script
 const cartIcon = document.querySelector('.cart-icon');
 const cartItems = document.querySelector('.cart-items');
 
@@ -2031,7 +2033,7 @@ cartItems.prepend(closeCartButton); // Add the button to the top of the cart
 function toggleCart() {
     const cartItems = document.querySelector('.cart-items');
     const isCartOpen = cartItems.style.display === 'block';
-    cartItems.style.display = isCartOpen ? 'none' : 'block';
+    cartItems.style.display = isCartOpen ? 'none' : 'block'; // Toggle display
     if (!isCartOpen) {
         renderCart(); // Render the cart when opening
     }
@@ -2039,7 +2041,7 @@ function toggleCart() {
 
 cartIcon.addEventListener('click', (e) => {
     e.stopPropagation();
-    toggleCart();
+    toggleCart(); // Toggles the cart display
 });
 
 // Event listener for close button to close the cart
@@ -2048,15 +2050,15 @@ closeCartButton.addEventListener('click', (e) => {
     cartItems.style.display = 'none'; // Close the cart
 });
 
-// Close cart when clicking outside
 document.addEventListener('click', () => {
-    cartItems.style.display = 'none';
+    cartItems.style.display = 'none'; // Hide the cart
 });
 
-// Prevent cart from closing when clicking inside
+
 cartItems.addEventListener('click', (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevents the cart from closing when clicking inside
 });
+
 
 // Modal functionality
 function openModal(productId) {
