@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap Central</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="jpg/logo.jpeg" alt="Blackhat Logo"></a>
+        </div>
+        
+       
+        
+        <div class="header-icons">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart-count">0</div>
+            </div>
+            <div class="profile-icon">
+                <a href="login.html"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+<!-- Updated Navigation Section -->
+<nav>
+    <div class="nav-container">
+        <!-- Burger Menu Always Visible -->
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navbar Items -->
+        <ul class="nav-links">
+            <li><a href="index1.html">Zanna Bukar</a></li>
+            <li><a href="bongol.html">Bongol</a></li>
+            <li><a href="atiku.html">Atiku</a></li>
+            <li><a href="bindo.html">Bindo</a></li>
+            <li><a href="miyaram.html">Miyaaram</a></li>
+            <li><a href="kindea.html">kindea</a></li>
+            <li><a href="tangaran.html">Tangaran</a></li>
+            <li><a href="dara.html">Normal</a></li>
+            <li><a href="tonak.html">Tonak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Updated Sidebar -->
+<div class="overlay"></div>
+<div class="sidebar">
+    <div class="dropdown-sidebar">
+        <button class="dropdown-btn">Caps <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content-sidebar">
+            <a href="index1.html">Zanna Bukar</a>
+            <a href="bongol.html">Bongol</a>
+            <a href="atiku.html">Atiku</a>
+            <a href="bindo.html">Bindo</a>
+            <a href="miyaram.html">Miyaaram</a>
+            <a href="kindea.html">kindea</a>
+            <a href="tangaran.html">Tangaran</a>
+            <a href="dara.html">Normal</a>
+            <a href="tonak.html">Tonak</a>
+        </div>
+
+        
+        <div><button class="dropdown-btn" onclick="location.href='throbe.html'">Throbes <i class="fas fa-chevron-down"></i></button></div>
+        <div><button class="dropdown-btn" onclick="location.href='shoe.html'">Shoes <i class="fas fa-chevron-down"></i></button></div>
+        <div><button class="dropdown-btn" onclick="location.href='trucker.html'">truckerhats <i class="fas fa-chevron-down"></i></button></div>
+        
+
+        <button class="dropdown-btn">Services <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content-sidebar">
+            <a href="resize.html">Cap resizing</a>
+            <a href="laundry.html">Laundry</a>
+        </div>
+        
+        </div>
+    </div>
+</div>
+
+
+    <!-- Main Content Section -->
+    <main class="main">
+        <div class="products-header">
+            <h2>Featured Products</h2>
+        </div>
+
+        <div class="product-grid">
+    <!-- Product 1 -->
+    <div class="product-card" onclick="openModal(1)">
+        <div class="product-image-container">
+            <!-- <span class="product-badge">Popular</span> -->
+            <img class="product-image" src="jpg/tonak/cap10.jpeg" alt="minister Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Minister Cap</div>
+            <div class="product-price">₦28000</div>
+            <div class="product-desc">Modern elegance meets timeless heritage. An authentic embroidered Hausa cap in a tailored size.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card" onclick="openModal(2)">
+        <div class="product-image-container">
+            <!-- <span class="product-badge">Best Seller</span> -->
+            <img class="product-image" src="jpg/tonak/cap11.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Minister Premium Cap</div>
+            <div class="product-price">₦38000</div>
+            <div class="product-desc">Sharp lines, bold colors, rich tradition — this brown, gold, and black Hausa cap is made for standout moments.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card" onclick="openModal(3)">
+        <div class="product-image-container">
+            <img class="product-image" src="jpg/tonak/tonak1.jpeg" alt="Tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name"> Dara Cap</div>
+            <div class="product-price">₦18000</div>
+            <div class="product-desc">Crafted with care, worn with pride. This Hausa cap blends cultural depth and sharp design.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card" onclick="openModal(4)">
+        <div class="product-image-container">
+            <!-- <span class="product-badge">Premium</span> -->
+            <img class="product-image" src="jpg/tonak/tonak2.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Minister Luxury Cap</div>
+            <div class="product-price">₦42000</div>
+            <div class="product-desc">From festivals to Friday prayers, this cap is your go-to for style and tradition in perfect harmony.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card" onclick="openModal(5)">
+        <div class="product-image-container">
+            <img class="product-image" src="jpg/tonak/tonak3.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Dara Royal Cap</div>
+            <div class="product-price">₦16500</div>
+            <div class="product-desc">Celebrate tradition in style. This cap's green embroidery brings a royal touch to everyday and festive wear.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card" onclick="openModal(6)">
+        <div class="product-image-container">
+            <img class="product-image" src="jpg/tonak/tonak4.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Dara Elegance Cap</div>
+            <div class="product-price">₦6500</div>
+            <div class="product-desc">Make a statement at weddings or casual outings with this finely crafted Hausa cap, designed to turn heads.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card" onclick="openModal(7)">
+        <div class="product-image-container">
+            <!-- <span class="product-badge">New</span> -->
+            <img class="product-image" src="jpg/tonak/tonak5.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Dara Heritage Cap</div>
+            <div class="product-price">₦36000</div>
+            <div class="product-desc">Distinctive and detailed, this cap brings the spirit of the North to life with elegant patterns and precise stitching.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card" onclick="openModal(8)">
+        <div class="product-image-container">
+            <img class="product-image" src="jpg/tonak/tonak6.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Minister Traditional Cap</div>
+            <div class="product-price">₦6500</div>
+            <div class="product-desc">A timeless piece for cultural pride and celebration. Embroidered in vibrant blue.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card" onclick="openModal(9)">
+        <div class="product-image-container">
+            <!-- <span class="product-badge">Limited</span> -->
+            <img class="product-image" src="jpg/tonak/tonak7.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Dara Regal Cap</div>
+            <div class="product-price">₦18899</div>
+            <div class="product-desc">Refined and regal — this Hausa cap showcases intricate needlework and bold patterns for the discerning gentleman.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card" onclick="openModal(10)">
+        <div class="product-image-container">
+            <img class="product-image" src="jpg/tonak/tonak8.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Dara Classic  Cap</div>
+            <div class="product-price">₦8000</div>
+            <div class="product-desc">Step into tradition with this beautiful  cap, blending heritage and elegance in red hues.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 11 -->
+    <div class="product-card" onclick="openModal(11)">
+        <div class="product-image-container">
+            <img class="product-image" src="jpg/tonak/tonak9.jpeg" alt="tonak Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Minister Supreme Cap</div>
+            <div class="product-price">₦32999</div>
+            <div class="product-desc">Classic Northern craftsmanship meets modern flair. This hand-embroidered cap features bold blue detailing.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Product 12 -->
+    <div class="product-card" onclick="openModal(12)">
+        <div class="product-image-container">
+            <!-- <span class="product-badge">Exclusive</span> -->
+            <img class="product-image" src="jpg/tonak/tonak10.jpeg" alt="Minister Cap">
+        </div>
+        <div class="product-info">
+            <div class="product-name">Minister Signature Cap</div>
+            <div class="product-price">₦18000</div>
+            <div class="product-desc">Elegant Hausa cap with intricate embroidery in rich black, gold, and brown tones.  perfect for traditional and stylish occasions.</div>
+            <div class="product-size">
+                <select>
+                    <option value="">Select size</option>
+                    <option value="22">22</option>
+                    <option value="22½">22½</option>
+                    <option value="23">23</option>
+                    <option value="23½">23½</option>
+                </select>
+            </div>
+            <button class="add-to-cart-button">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+        <div class="pagination">
+            <a href="index1.html" class="active">1</a>
+            <a href="index1.html">2</a>
+        </div>
+    </main>
+  <!-- Cart Section -->
+<div class="cart-items">
+    <div class="cart-header">
+        <h2>Your Shopping Cart</h2>
+        <button class="close-cart-button">&times;</button>
+    </div>
+    
+    <div class="cart-body">
+        <!-- Updated Empty Cart Message -->
+        <div class="empty-cart-message">
+            <i class="fas fa-shopping-basket"></i>
+            <p>Your cart is empty</p>
+            <a href="index1.html" class="continue-shopping-btn">Continue Shopping</a>
+        </div>
+        
+        <!-- Cart Items List -->
+        <div class="cart-items-list">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+    </div>
+    
+    <div class="cart-footer">
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span class="cart-subtotal">₦0</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span class="cart-shipping">Calculated at checkout</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span class="cart-total">₦0</span>
+            </div>
+        </div>
+        
+        <button class="checkout-button">
+            <i class="fas fa-lock"></i> Proceed to Checkout
+        </button>
+        
+        <div class="payment-methods">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal">
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Modal Popup -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-image-container">
+                <img id="modal-product-image" class="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-product-name"></h2>
+                <div id="modal-product-price" class="modal-price"></div>
+                <div id="modal-product-description" class="modal-desc"></div>
+                <div id="modal-product-size">
+                    <select id="modal-size-select">
+                        <option value="">Select your size</option>
+                        <option value="22">22</option>
+                        <option value="22½">22½</option>
+                        <option value="23">23</option>
+                        <option value="23½">23½</option>
+                    </select>
+                </div>
+                <button id="add-to-cart-button">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Updated Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="jpg/logo.jpeg" alt="Blackhat Logo" width="120">
+                </a>
+                <div class="footer-contact">
+                    <a href="tel:08166785951" class="contact-link">
+                        <i class="fas fa-phone-alt"></i> 08166785951
+                    </a>
+                    <a href="https://maps.google.com?q=Ibrahim+Dabo+Road,+Kano,+Nigeria" class="contact-link">
+                        <i class="fas fa-map-marker-alt"></i> Ibrahim Dabo Road
+                    </a>
+                    <a href="#" id="emailUsLink" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="links-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="index1.html">Caps</a></li>
+                        <li><a href="throbe.html">Throbes</a></li>
+                        <li><a href="trucker.html">Trucker Hats</a></li>
+                        <li><a href="shoe.html">Shoes</a></li>
+                    </ul>
+                </div>
+
+                <div class="links-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="profile.html">Account</a></li>
+                    </ul>
+                </div>
+
+                <div class="links-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="https://wa.me/08166785951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 Blackhat Caps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Email Form Modal -->
+<div id="email-modal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+        <span class="close">&times;</span>
+        <div class="modal-info">
+            <h2>Contact Us</h2>
+            <form id="email-form">
+                <div class="form-group">
+                    <label for="email-name">Your Name</label>
+                    <input type="text" id="email-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-address">Your Email</label>
+                    <input type="email" id="email-address" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-subject">Subject</label>
+                    <input type="text" id="email-subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-message">Message</label>
+                    <textarea id="email-message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="add-to-cart-button">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
+
