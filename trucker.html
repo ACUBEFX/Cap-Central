@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trucker Hats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="homepage.html"><img src="logo.jpeg" alt="Blackhat Logo"></a>
+        </div>
+        
+        <div class="header-icons">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart-count">0</div>
+            </div>
+            <div class="profile-icon">
+                <a href="login.html"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <div class="nav-container">
+            <!-- Burger Menu Always Visible -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navbar Items -->
+            <ul class="nav-links">
+                <!-- <li><a href="index1.html">Zanna Bukar</a></li>
+                <li><a href="bongol.html">Bongol</a></li>
+                <li><a href="atiku.html">Atiku</a></li>
+                <li><a href="bindo.html">Bindo</a></li>
+                <li><a href="miyaram.html">Miyaaram</a></li>
+                <li><a href="kindea.html">kindea</a></li>
+                <li><a href="tangaran.html">Tangaran</a></li>
+                <li><a href="dara.html">Normal</a></li>
+                <li><a href="tonak.html">Tonak</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="overlay"></div>
+    <div class="sidebar">
+        <div class="dropdown-sidebar">
+            <button class="dropdown-btn">Caps <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content-sidebar">
+                <a href="index1.html">Zanna Bukar</a>
+                <a href="bongol.html">Bongol</a>
+                <a href="atiku.html">Atiku</a>
+                <a href="bindo.html">Bindo</a>
+                <a href="miyaram.html">Miyaaram</a>
+                <a href="kindea.html">kindea</a>
+                <a href="tangaran.html">Tangaran</a>
+                <a href="dara.html">Normal</a>
+                <a href="tonak.html">Tonak</a>
+            </div>
+            
+            <div><button class="dropdown-btn" onclick="location.href='throbe.html'">Throbes <i class="fas fa-chevron-down"></i></button></div>
+            <div><button class="dropdown-btn" onclick="location.href='shoe.html'">Shoes <i class="fas fa-chevron-down"></i></button></div>
+            <div><button class="dropdown-btn" onclick="location.href='trucker.html'">Trucker Hats <i class="fas fa-chevron-down"></i></button></div>
+            
+            <button class="dropdown-btn" id="services-button">Services <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content-sidebar">
+                <a href="resize.html">Cap resizing</a>
+                <a href="laundry.html">Laundry</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <main class="main">
+        <div class="products-header">
+            <h2>Trucker Hats</h2>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card" onclick="openModal(1)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker1.jpg" alt="Classic Trucker Hat">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Classic Trucker Hat</div>
+                    <div class="product-price">₦4500</div>
+                    <div class="product-desc">The timeless trucker hat with mesh back for breathability and a curved brim for style.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" onclick="openModal(2)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker2.jpg" alt="Vintage Logo Trucker">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Vintage Logo Trucker</div>
+                    <div class="product-price">₦5000</div>
+                    <div class="product-desc">Retro-style trucker hat with distressed logo for that authentic vintage look.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" onclick="openModal(3)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker3.jpg" alt="Snapback Trucker">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Snapback Trucker</div>
+                    <div class="product-price">₦4800</div>
+                    <div class="product-desc">Adjustable snapback closure with structured front and breathable mesh back.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" onclick="openModal(4)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker4.jpg" alt="Camouflage Trucker">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Camouflage Trucker</div>
+                    <div class="product-price">₦5200</div>
+                    <div class="product-desc">Military-inspired camo print trucker hat with foam front and mesh back.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" onclick="openModal(5)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker5.jpg" alt="Graphic Print Trucker">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Graphic Print Trucker</div>
+                    <div class="product-price">₦5500</div>
+                    <div class="product-desc">Bold graphic print on the front panel with contrasting mesh back.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" onclick="openModal(6)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker6.jpg" alt="Neon Trucker Hat">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Neon Trucker Hat</div>
+                    <div class="product-price">₦5300</div>
+                    <div class="product-desc">Vibrant neon color trucker hat that stands out in any crowd.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card" onclick="openModal(7)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker7.jpg" alt="Patriotic Trucker">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Patriotic Trucker</div>
+                    <div class="product-price">₦4900</div>
+                    <div class="product-desc">Red, white and blue color scheme for showing your patriotic spirit.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card" onclick="openModal(8)">
+                <div class="product-image-container">
+                    <img class="product-image" src="jpg/trucker/trucker8.jpg" alt="Sports Team Trucker">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sports Team Trucker</div>
+                    <div class="product-price">₦5700</div>
+                    <div class="product-desc">Show your team spirit with this officially licensed team trucker hat.</div>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Cart Section -->
+        <div class="cart-items">
+            <div class="cart-header">
+                <h2>Your Shopping Cart</h2>
+                <button class="close-cart-button">&times;</button>
+            </div>
+            
+            <div class="cart-body">
+                <!-- Empty Cart Message -->
+                <div class="empty-cart-message">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Your cart is empty</p>
+                    <a href="trucker.html" class="continue-shopping-btn">Continue Shopping</a>
+                </div>
+                
+                <!-- Cart Items List -->
+                <div class="cart-items-list">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span class="cart-subtotal">₦0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span class="cart-shipping">Calculated at checkout</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span class="cart-total">₦0</span>
+                    </div>
+                </div>
+                
+                <button class="checkout-button">
+                    <i class="fas fa-lock"></i> Proceed to Checkout
+                </button>
+                
+                <div class="payment-methods">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Popup -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-image-container">
+                    <img id="modal-product-image" class="modal-image" src="" alt="Product Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-product-name"></h2>
+                    <div id="modal-product-price" class="modal-price"></div>
+                    <div id="modal-product-description" class="modal-desc"></div>
+                    <button id="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <a href="homepage.html" class="logo">
+                        <img src="logo.jpeg" alt="Blackhat Logo" width="120">
+                    </a>
+                    <div class="footer-contact">
+                        <a href="tel:08166785951" class="contact-link">
+                            <i class="fas fa-phone-alt"></i> 08166785951
+                        </a>
+                        <a href="https://maps.google.com?q=Ibrahim+Dabo+Road,+Kano,+Nigeria" class="contact-link">
+                            <i class="fas fa-map-marker-alt"></i> Ibrahim Dabo Road
+                        </a>
+                        <a href="#" id="emailUsLink" class="contact-link">
+                            <i class="fas fa-envelope"></i> Email Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="index1.html">Caps</a></li>
+                            <li><a href="throbe.html">Throbes</a></li>
+                            <li><a href="trucker.html">Trucker Hats</a></li>
+                            <li><a href="shoe.html">Shoes</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="links-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="#" onclick="scrollToServices()">Services</a></li>
+                            <li><a href="#profile.html">Account</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="links-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="signup.html">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://wa.me/08166785951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2023 Blackhat Caps. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Email Form Modal -->
+        <div id="email-modal" class="modal">
+            <div class="modal-content" style="max-width: 500px;">
+                <span class="close">&times;</span>
+                <div class="modal-info">
+                    <h2>Contact Us</h2>
+                    <form id="email-form">
+                        <div class="form-group">
+                            <label for="email-name">Your Name</label>
+                            <input type="text" id="email-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-address">Your Email</label>
+                            <input type="email" id="email-address" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-subject">Subject</label>
+                            <input type="text" id="email-subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-message">Message</label>
+                            <textarea id="email-message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="add-to-cart-button">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Cart functionality
+let cart = [];
+const cartCount = document.querySelector('.cart-count');
+
+// Toggle cart visibility
+function toggleCart() {
+    const cartItems = document.querySelector('.cart-items');
+    const isCartOpen = cartItems.style.display === 'block';
+    cartItems.style.display = isCartOpen ? 'none' : 'block';
+    if (!isCartOpen) {
+        renderCart();
+    }
+}
+
+// Cart event listeners
+document.querySelector('.cart-icon').addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleCart();
+});
+
+document.querySelector('.close-cart-button')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.querySelector('.cart-items').style.display = 'none';
+});
+
+document.addEventListener('click', () => {
+    document.querySelector('.cart-items').style.display = 'none';
+});
+
+document.querySelector('.cart-items').addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// Modal functionality
+function openModal(productId) {
+    const modal = document.getElementById('product-modal');
+    const productCards = document.querySelectorAll('.product-card');
+
+    if (productId < 1 || productId > productCards.length) return;
+
+    const productCard = productCards[productId - 1];
+    const productName = productCard.querySelector('.product-name').textContent;
+    const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('₦', '').replace(',', ''));
+    const productDesc = productCard.querySelector('.product-desc').textContent;
+    const productImage = productCard.querySelector('.product-image').src;
+
+    document.getElementById('modal-product-name').textContent = productName;
+    document.getElementById('modal-product-price').textContent = `₦${productPrice.toLocaleString()}`;
+    document.getElementById('modal-product-description').textContent = productDesc;
+    document.getElementById('modal-product-image').src = productImage;
+
+    modal.dataset.productId = productId;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('product-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    modal.dataset.productId = '';
+}
+
+// Product card click handling
+document.querySelector('.product-grid').addEventListener('click', function(e) {
+    const target = e.target;
+    if (target.closest('.product-card')) {
+        const productCard = target.closest('.product-card');
+        if (target.closest('.add-to-cart-button')) return;
+        const productId = Array.from(document.querySelectorAll('.product-card')).indexOf(productCard) + 1;
+        openModal(productId);
+    }
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (event) => {
+    if (event.target === document.getElementById('product-modal')) {
+        closeModal();
+    }
+});
+
+// Close modal when clicking close button
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', closeModal);
+});
+
+// Cart rendering
+function renderCart() {
+    const cartItemsContainer = document.querySelector('.cart-items-list');
+    const emptyCartMessage = document.querySelector('.empty-cart-message');
+    const cartSubtotal = document.querySelector('.cart-subtotal');
+    const cartTotal = document.querySelector('.cart-total');
+
+    cartItemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        emptyCartMessage.style.display = 'flex';
+        cartSubtotal.textContent = '₦0';
+        cartTotal.textContent = '₦0';
+        return;
+    }
+
+    emptyCartMessage.style.display = 'none';
+
+    let subtotal = 0;
+    cart.forEach((item, index) => {
+        subtotal += item.price * item.quantity;
+        cartItemsContainer.innerHTML += `
+            <div class="cart-item">
+                <div class="cart-item-details">
+                    <p class="cart-item-name"><strong>${item.name}</strong></p>
+                    <p class="cart-item-price">Price: <strong>₦${item.price.toLocaleString()}</strong></p>
+                    <p class="cart-item-quantity">Quantity: <strong>${item.quantity}</strong></p>
+                </div>
+                <button class="remove-item-button" data-index="${index}">Remove</button>
+            </div>
+        `;
+    });
+
+    cartSubtotal.textContent = `₦${subtotal.toLocaleString()}`;
+    cartTotal.textContent = `₦${subtotal.toLocaleString()}`;
+
+    // Add event listeners to remove buttons
+    document.querySelectorAll('.remove-item-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const itemIndex = e.target.dataset.index;
+            cart.splice(itemIndex, 1);
+            renderCart();
+            updateCartCount();
+        });
+    });
+}
+
+// Add to cart function (simplified for trucker hats - no size)
+function addToCart(product) {
+    const existingItem = cart.find(item => item.name === product.name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+    renderCart();
+    updateCartCount();
+}
+
+// Update cart count
+function updateCartCount() {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+}
+
+// Add to cart from modal
+document.getElementById('add-to-cart-button').addEventListener('click', () => {
+    const modal = document.getElementById('product-modal');
+    const productId = modal.dataset.productId;
+    const productCard = document.querySelectorAll('.product-card')[productId - 1];
+
+    const productName = productCard.querySelector('.product-name').textContent;
+    const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('₦', '').replace(',', ''));
+
+    const product = {
+        name: productName,
+        price: productPrice
+    };
+
+    addToCart(product);
+    closeModal();
+});
+
+// Add to cart from product card
+document.querySelectorAll('.add-to-cart-button').forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productCard = button.closest('.product-card');
+        const productName = productCard.querySelector('.product-name').textContent;
+        const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('₦', '').replace(',', ''));
+        const product = { name: productName, price: productPrice };
+        addToCart(product);
+    });
+});
+
+// Burger menu functionality
+const burgerMenu = document.querySelector('.burger-menu');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.querySelector('.overlay');
+
+burgerMenu.addEventListener('click', function() {
+    this.classList.toggle('open');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = this.classList.contains('open') ? 'hidden' : 'auto';
+});
+
+overlay.addEventListener('click', function() {
+    burgerMenu.classList.remove('open');
+    sidebar.classList.remove('active');
+    this.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+// Sidebar dropdown functionality
+document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+// Email modal functionality
+const emailUsLink = document.getElementById('emailUsLink');
+const emailModal = document.getElementById('email-modal');
+
+emailUsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    emailModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+});
+
+emailModal.querySelector('.close').addEventListener('click', function() {
+    emailModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === emailModal) {
+        emailModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Form submission handler
+document.getElementById('email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    this.reset();
+    emailModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+function scrollToServices() {
+    document.querySelector('.sidebar').classList.add('active');
+    document.querySelector('.overlay').classList.add('active');
+    document.getElementById('services-button').scrollIntoView({
+        behavior: 'smooth'
+    });
+    document.getElementById('services-button').click();
+    return false;
+}
+    </script>
+</body>
+</html>
