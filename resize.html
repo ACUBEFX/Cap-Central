@@ -38,6 +38,7 @@
     h2 {
       margin-bottom: 1rem;
       color: #080808;
+      text-align: center;
     }
 
     /* Form Styles */
@@ -120,6 +121,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       max-width: 500px;
       width: 90%;
+      animation: fadeIn 0.3s ease-in-out;
     }
 
     .modal-content h3 {
@@ -161,6 +163,101 @@
 
     .pay-btn:hover {
       background: #0056b3;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      input, select, textarea {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+      }
+
+      .modal-content {
+        padding: 1.5rem;
+      }
+
+      .close-btn, .pay-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      input, select, textarea {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+      }
+
+      .modal-content {
+        padding: 1rem;
+      }
+
+      .close-btn, .pay-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      input, select, textarea {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+      }
+
+      .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+      }
+
+      .modal-content {
+        padding: 0.8rem;
+      }
+
+      .close-btn, .pay-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
 </head>
@@ -235,6 +332,7 @@
   </div>
 
   
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const capsCountInput = document.getElementById("caps-count");
