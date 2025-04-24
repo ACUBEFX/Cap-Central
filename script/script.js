@@ -366,3 +366,20 @@ document.getElementById('email-form').addEventListener('submit', function(e) {
     document.body.style.overflow = 'auto';
 });
 
+
+
+function scrollToServices() {
+    // Close any open menus if needed
+    document.querySelector('.sidebar').classList.add('active');
+    document.querySelector('.overlay').classList.add('active');
+    
+    // Scroll to the services button
+    document.getElementById('services-button').scrollIntoView({
+        behavior: 'smooth'
+    });
+    
+    // Optionally open the services dropdown
+    document.getElementById('services-button').click();
+    
+    return false; // Prevent default link behavior
+}
