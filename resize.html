@@ -20,6 +20,27 @@
       color: #fff;
       padding: 1.5rem 0;
       text-align: center;
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.5rem 1rem;
+      background: #f9f9fa;
+      color: #0b0b0b;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #fefeff;
     }
 
     .container {
@@ -178,36 +199,8 @@
     }
 
     /* Responsive Styles */
-    @media (max-width: 1024px) {
-      .container {
-        padding: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      input, select, textarea {
-        font-size: 1rem;
-      }
-
-      .btn {
-        font-size: 1rem;
-      }
-
-      .modal-content {
-        padding: 1.5rem;
-      }
-
-      .close-btn, .pay-btn {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
-      }
-    }
-
     @media (max-width: 768px) {
       .container {
-        margin: 1rem;
         padding: 1rem;
       }
 
@@ -217,12 +210,11 @@
 
       input, select, textarea {
         font-size: 0.9rem;
-        padding: 0.6rem;
       }
 
-      .btn {
+      .btn, .back-btn {
         font-size: 0.9rem;
-        padding: 0.6rem;
+        padding: 0.6rem 1rem;
       }
 
       .modal-content {
@@ -237,7 +229,7 @@
 
     @media (max-width: 480px) {
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
       input, select, textarea {
@@ -245,7 +237,7 @@
         padding: 0.5rem;
       }
 
-      .btn {
+      .btn, .back-btn {
         font-size: 0.8rem;
         padding: 0.5rem;
       }
@@ -263,6 +255,7 @@
 </head>
 <body>
   <header class="header">
+    <a href="javascript:history.back()" class="back-btn">Back</a>
     <h1>Cap Resizing Service</h1>
     <p>Resize your caps to the perfect fit!</p>
   </header>
@@ -331,7 +324,9 @@
     </div>
   </div>
 
-  
+  <footer class="footer">
+    <p>&copy; 2025 Cap Resizing Service. All rights reserved.</p>
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
