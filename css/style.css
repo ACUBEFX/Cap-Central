@@ -73,24 +73,80 @@ header {
 }
 
 
+/* Brand Name Styling */
 #brandname {
     color: white;
+    font-size: 24px;
+    font-family: 'Lora', serif;
+    font-weight: 600;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin: 0 15px;
-    font-size: clamp(1.25rem, 4vw, 1.8rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
-  }
+    flex-grow: 1;
+    margin: 0 10px; /* Add spacing between elements */
+}
 
-  @media (max-width: 400px) {
-    #brandname {
-      font-size: 1.1rem;
-      max-width: 150px;
+/* Header Icons Styling */
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.header-icons i {
+    font-size: 20px;
+    color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: nowrap; /* No wrapping on smaller screens */
+        justify-content: space-between; /* Ensure horizontal alignment */
     }
-  }
+
+    .logo {
+        order: 1; /* Logo comes first */
+    }
+
+    #brandname {
+        order: 2; /* Brand name comes second */
+        font-size: 20px;
+    }
+
+    .header-icons {
+        order: 3; /* Icons come last */
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 8px 5%;
+    }
+
+    .logo img {
+        width: 60px; /* Adjust logo size for smaller screens */
+    }
+
+    #brandname {
+        font-size: 18px;
+    }
+
+    .header-icons i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    #brandname {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 50px; /* Further reduce logo size */
+    }
+
+    .header-icons i {
+        font-size: 16px;
+    }
+}
 
 .header-icons {
     display: flex;
