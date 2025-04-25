@@ -30,7 +30,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index1.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li<a href="#" onclick="location.href='index1.html#services'"></li>
         <li><a href="login.html">Sign In</a></li>
       </ul>
     </nav>
@@ -286,7 +286,7 @@
   if (!hero || !images.length) return;
 
   let currentIndex = 0;
-  const slideDuration = 3000; // 3 seconds
+  const slideDuration = 1500; // 3 seconds
 
   function setBackground() {
     hero.style.backgroundImage = images[currentIndex];
@@ -320,9 +320,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const hero2Images = [
     "url('jpg/atiku/atiku1.JPG",//atiku
-    "url('jpg/shoes/shoe1.jpg')",//shoe
+    "url('jpg/shoes/shoe4.jpg')",//shoe
     "url('jpg/miyaram/miyaram1.JPG')",//miyaram
-    "url('jpg/zanna (3).jpeg')" 
+    "url('jpg/cap5.jpeg')" 
   ];
 
   initHeroSlider('hero1', hero1Images);
