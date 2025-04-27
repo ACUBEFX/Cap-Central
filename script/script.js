@@ -387,25 +387,4 @@ function scrollToServices() {
 
 
 
- document.addEventListener("DOMContentLoaded", () => {
-            const menTab = document.getElementById("men-tab");
-            const womenTab = document.getElementById("women-tab");
-            const menProducts = document.getElementById("men-products");
-            const womenProducts = document.getElementById("women-products");
-
-            menTab.addEventListener("click", (e) => {
-                e.preventDefault();
-                menTab.classList.add("active-tab");
-                womenTab.classList.remove("active-tab");
-                menProducts.style.display = "grid";
-                womenProducts.style.display = "none";
-            });
-
-            womenTab.addEventListener("click", (e) => {
-                e.preventDefault();
-                womenTab.classList.add("active-tab");
-                menTab.classList.remove("active-tab");
-                womenProducts.style.display = "grid";
-                menProducts.style.display = "none";
-            });
-        });
+ 
